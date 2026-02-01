@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Intelligence | Elite Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --silver: #f1f5f9;
+            --chrome-accent: #cbd5e1;
+            --glass: rgba(10, 10, 10, 0.85);
+            --border: rgba(255, 255, 255, 0.15);
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            font-family: 'Outfit', sans-serif;
+            overflow: hidden;
+            color: var(--silver);
+        }
+
+        /* Animated Cinematic Background */
+        .bg-animate {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.3);
+            z-index: -1;
+            animation: pan 25s infinite alternate linear;
+        }
+
+        @keyframes pan {
+            from { transform: scale(1.0); }
+            to { transform: scale(1.15); }
+        }
+
+        .prediction-card {
+            background: var(--glass);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid var(--border);
+            border-radius: 40px;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.9);
+            position: relative;
+        }
+
+        .header-content {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        /* Styling for the SVG Logo */
+        .car-logo-svg {
+            width: 140px;
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.4));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        h1 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #fff 0%, #999 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--chrome-accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            padding-left: 2px;
+        }
+
+        input, select {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 14px;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        select option {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .full-row { grid-column: span 2; margin-bottom: 10px;}
+
+        .submit-btn {
+            grid-column: span 2;
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 20px;
+            border-radius: 15px;
+            font-family: 'Syncopate', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.4s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            letter-spacing: 4px;
+            transform: translateY(-2px);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+        }
+
+        #resultLayer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.96);
+            border-radius: 40px;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .price-display {
+            border: 1px solid var(--chrome-accent);
+            padding: 40px;
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            box-shadow: inset 0 0 30px rgba(255,255,255,0.05);
+        }
+
+        #predictionText {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #fff;
+            font-family: 'Syncopate', sans-serif;
+        }
+
+        .refresh-btn {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-family: 'Syncopate', sans-serif;
+            transition: 0.3s;
+        }
+
+        .refresh-btn:hover {
+            background: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-animate"></div>
+
+<div class="prediction-card">
+    <div class="header-content">
+        <svg class="car-logo-svg" viewBox="0 0 100 35" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5,25 Q5,20 15,18 L35,12 Q50,8 70,12 L90,18 Q95,20 95,25 L90,27 L10,27 Z" fill="none" stroke="white" stroke-width="1.5" />
+            <circle cx="22" cy="26" r="4" fill="white" />
+            <circle cx="78" cy="26" r="4" fill="white" />
+            <path d="M38,14 L62,14 Q58,10 50,10 Q42,10 38,14" fill="white" opacity="0.4" />
+        </svg>
+        <h1>Estimation Engine</h1>
+    </div>
+
+    <form id="carForm" class="form-grid">
+        <div class="input-group">
+            <label>Model Year</label>
+            <input type="number" id="year" placeholder="2022" min="2010" required>
+        </div>
+        <div class="input-group">
+            <label>Price (Lakhs)</label>
+            <input type="number" step="0.01" id="p_price" placeholder="12.50" required>
+        </div>
+        <div class="input-group full-row">
+            <label>KMs Driven</label>
+            <input type="number" id="kms" placeholder="15000" required>
+        </div>
+        <div class="input-group">
+            <label>Fuel</label>
+            <select id="fuel">
+                <option value="0">Petrol</option>
+                <option value="1">Diesel</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label>Transmission</label>
+            <select id="transmission">
+                <option value="0">Manual</option>
+                <option value="1">Automatic</option>
+            </select>
+        </div>
+        <button type="submit" class="submit-btn">Evaluate Value</button>
+    </form>
+
+    <div id="resultLayer">
+        <div class="price-display">
+            <span style="font-size: 0.6rem; letter-spacing: 3px; color: var(--chrome-accent);">MARKET VALUE</span>
+            <div id="predictionText"></div>
+            <span style="font-size: 0.6rem; letter-spacing: 3px; color: var(--chrome-accent);">LAKHS</span>
+        </div>
+        <button class="refresh-btn" onclick="resetUI()">New Search</button>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('carForm');
+    const resultLayer = document.getElementById('resultLayer');
+    const predictionText = document.getElementById('predictionText');
+    const yearInput = document.getElementById('year');
+
+    // Automatically set the max year to current year (2026)
+    const currentYear = new Date().getFullYear();
+    yearInput.max = currentYear;
+
+    form.onsubmit = function(e) {
+        e.preventDefault();
+        
+        const selectedYear = parseInt(yearInput.value);
+        const price = parseFloat(document.getElementById('p_price').value);
+
+        // Validation logic for Year
+        if (selectedYear < 2010 || selectedYear > currentYear) {
+            alert(`Please enter a year between 2010 and ${currentYear}`);
+            yearInput.value = ""; // Clear the invalid input
+            return;
+        }
+        
+        // Logical Simulation
+        const estimate = (price * 0.78).toFixed(2);
+        
+        resultLayer.style.display = 'flex';
+        predictionText.innerHTML = `₹${estimate}`;
+    };
+
+    function resetUI() {
+        form.reset();
+        resultLayer.style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
