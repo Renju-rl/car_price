@@ -15,7 +15,14 @@ https://web-production-02682.up.railway.app/
 - Trained **Random Forest Regressor** model  
 - Flask backend with **Jinja2** templating  
 - Deployed on **Railway** (production-ready)  
-- Input validation & safe prediction handling  
+- Input validation & safe prediction handling
+
+- ##  Tech Stack
+
+- **Backend:** Python 3, Flask, NumPy, scikit-learn  
+- **Frontend:** HTML5, CSS3 (Glassmorphism UI), JavaScript  
+- **Deployment:** Railway  
+
 
 ##  Machine Learning Model
 
