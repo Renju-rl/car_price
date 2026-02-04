@@ -31,6 +31,9 @@ https://web-production-02682.up.railway.app/
 - **Frontend:** HTML5, CSS3 (Glassmorphism UI), JavaScript  
 - **Deployment:** Railway  
  ## How to Run Locally
-### 1 Clone the repository
+
+### 1️ Clone the repository
+```bash
 git clone https://github.com/Renju-rl/car_price.git
 cd car_price
+
