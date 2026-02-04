@@ -24,9 +24,11 @@ https://web-production-02682.up.railway.app/
 - **Target Variable:** Selling Price (in Lakhs)  
 - **Model File:** `rfr_model.pkl`
 
+
  ##  Tech Stack
 
 - **Backend:** Python 3, Flask, NumPy, scikit-learn  
 - **Frontend:** HTML5, CSS3 (Glassmorphism UI), JavaScript  
 - **Deployment:** Railway  
- 
+ ## How to Run Locally
+### 1 Clone the repository
