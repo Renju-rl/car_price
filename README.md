@@ -17,3 +17,9 @@ https://web-production-02682.up.railway.app/
 - Deployed on **Railway** (production-ready)  
 - Input validation & safe prediction handling  
 
+##  Machine Learning Model
+
+- **Algorithm:** Random Forest Regressor  
+- **Framework:** scikit-learn  
+- **Target Variable:** Selling Price (in Lakhs)  
+- **Model File:** `rfr_model.pkl`  
