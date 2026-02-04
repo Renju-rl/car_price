@@ -11,5 +11,5 @@ https://drive.google.com/file/d/1F77YHa0O0J4gwV--lrv_TmZuJ5HNBHw4/view?usp=shari
 
 ## 🎥 Project Demo
 
-[![Click to Watch Demo](assets/demo.png)](https://drive.google.com/file/d/1F77YHa0O0J4gwV--lrv_TmZuJ5HNBHw4/view?usp=sharing)
+![sample video](https://github.com/user-attachments/assets/377c56d1-fee1-42de-8c3c-111762c567a0)
 
