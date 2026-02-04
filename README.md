@@ -8,7 +8,7 @@ https://web-production-02682.up.railway.app/
 
 ![sample video](https://github.com/user-attachments/assets/377c56d1-fee1-42de-8c3c-111762c567a0)
 
-## ✨ Features
+##  Features
 
 - Machine Learning–powered price prediction  
 - Clean & cinematic glassmorphism UI  
