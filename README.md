@@ -17,16 +17,16 @@ https://web-production-02682.up.railway.app/
 - Deployed on **Railway** (production-ready)  
 - Input validation & safe prediction handling
 
-- ##  Tech Stack
-
-- **Backend:** Python 3, Flask, NumPy, scikit-learn  
-- **Frontend:** HTML5, CSS3 (Glassmorphism UI), JavaScript  
-- **Deployment:** Railway  
-
-
 ##  Machine Learning Model
 
 - **Algorithm:** Random Forest Regressor  
 - **Framework:** scikit-learn  
 - **Target Variable:** Selling Price (in Lakhs)  
-- **Model File:** `rfr_model.pkl`  
+- **Model File:** `rfr_model.pkl`
+
+ ##  Tech Stack
+
+- **Backend:** Python 3, Flask, NumPy, scikit-learn  
+- **Frontend:** HTML5, CSS3 (Glassmorphism UI), JavaScript  
+- **Deployment:** Railway  
+ 
