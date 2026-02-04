@@ -10,8 +10,13 @@ https://web-production-02682.up.railway.app/
 
 ## Features
 -Machine Learning powered price prediction
+
 -Clean & cinematic glassmorphism UI
+
 -Trained Random Forest Regressor model
+
 -Flask backend with Jinja2 templating
+
 -Deployed on Railway (production-ready)
+
 -Input validation & safe prediction handling
