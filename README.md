@@ -4,7 +4,7 @@ A production-ready Flask-based machine learning web application that predicts th
 ## Live Link
 https://web-production-02682.up.railway.app/
 
-## 🎥 Sample Demo
+##  Sample Demo
 
 ![sample video](https://github.com/user-attachments/assets/377c56d1-fee1-42de-8c3c-111762c567a0)
 
