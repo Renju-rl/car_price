@@ -32,3 +32,5 @@ https://web-production-02682.up.railway.app/
 - **Deployment:** Railway  
  ## How to Run Locally
 ### 1 Clone the repository
+git clone https://github.com/Renju-rl/car_price.git
+cd car_price
