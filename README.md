@@ -8,15 +8,12 @@ https://web-production-02682.up.railway.app/
 
 ![sample video](https://github.com/user-attachments/assets/377c56d1-fee1-42de-8c3c-111762c567a0)
 
-## Features
--Machine Learning powered price prediction
+## ✨ Features
 
--Clean & cinematic glassmorphism UI
+- Machine Learning–powered price prediction  
+- Clean & cinematic glassmorphism UI  
+- Trained **Random Forest Regressor** model  
+- Flask backend with **Jinja2** templating  
+- Deployed on **Railway** (production-ready)  
+- Input validation & safe prediction handling  
 
--Trained Random Forest Regressor model
-
--Flask backend with Jinja2 templating
-
--Deployed on Railway (production-ready)
-
--Input validation & safe prediction handling
