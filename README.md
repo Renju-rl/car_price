@@ -32,22 +32,22 @@ https://web-production-02682.up.railway.app/
 - **Deployment:** Railway  
  ## How to Run Locally
 
-### 1️ Clone the repository
+#### 1️ Clone the repository
 ```bash
 git clone https://github.com/Renju-rl/car_price.git
 cd car_price
 ```
 
-### 2 Create virtual environment
+#### 2 Create virtual environment
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
-### 3 Install dependencies
+#### 3 Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
-### 4 Run the application
+#### 4 Run the application
 ```bash
 python app.py
 ```
