@@ -8,3 +8,8 @@ https://web-production-02682.up.railway.app/
 
 ## Sample Video 
 https://drive.google.com/file/d/1F77YHa0O0J4gwV--lrv_TmZuJ5HNBHw4/view?usp=sharing
+
+## 🎥 Project Demo
+
+[![Click to Watch Demo](assets/demo.png)](https://drive.google.com/file/d/1F77YHa0O0J4gwV--lrv_TmZuJ5HNBHw4/view?usp=sharing)
+
